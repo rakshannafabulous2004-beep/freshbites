@@ -1,0 +1,16 @@
+# Build files
+target/
+
+# IDE files
+.idea/
+.vscode/
+
+# Application config
+src/main/resources/application.properties
+
+
+# Environment files
+.env
+
+# Logs
+*.log

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Meals - FreshBite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meals.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Fresh<span>Bite</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="meals.html" class="active">Meals</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="auth-links"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Browse Diet Meals</h1>
+        <p>Find the perfect meal for your dietary goals</p>
+    </section>
+
+    <main class="container" style="padding: 40px 20px;">
+        <div class="meals-toolbar">
+            <div class="category-filters" id="category-filters"></div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search meals...">
+            </div>
+        </div>
+        <div class="meals-grid" id="meals-container">
+            <div class="loading">Loading meals...</div>
+        </div>
+    </main>
+
+    <div id="meal-modal" class="hidden"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>FreshBite</h3>
+                <p>Your trusted partner for healthy diet food delivery.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="meals.html">Browse Meals</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Account</h3>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FreshBite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/meals.js"></script>
+</body>
+</html>

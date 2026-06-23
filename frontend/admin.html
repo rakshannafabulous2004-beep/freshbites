@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - FreshBite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meals.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Fresh<span>Bite</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <ul class="nav-links">
+                <li id="auth-links"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Admin Dashboard</h1>
+        <p>Manage meals and orders</p>
+    </section>
+
+    <main class="container" style="padding: 40px 20px;">
+        <div id="admin-alert"></div>
+
+        <section class="admin-section">
+            <h2>Add / Edit Meal</h2>
+            <form id="meal-form" class="card">
+                <div class="admin-form-grid">
+                    <div class="form-group">
+                        <label for="meal-name">Name</label>
+                        <input type="text" id="meal-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-category">Category</label>
+                        <select id="meal-category" required>
+                            <option value="High Protein">High Protein</option>
+                            <option value="Low Calorie">Low Calorie</option>
+                            <option value="Keto">Keto</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Low Carb">Low Carb</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-calories">Calories</label>
+                        <input type="number" id="meal-calories" required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-protein">Protein (g)</label>
+                        <input type="number" id="meal-protein" required min="0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-carbs">Carbs (g)</label>
+                        <input type="number" id="meal-carbs" required min="0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-fats">Fats (g)</label>
+                        <input type="number" id="meal-fats" required min="0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-price">Price (₹)</label>
+                        <input type="number" id="meal-price" required min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="meal-image">Image URL</label>
+                        <input type="text" id="meal-image" placeholder="images/meal-name.jpg">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="meal-description">Description</label>
+                    <textarea id="meal-description" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="meal-submit-btn">Add Meal</button>
+                <button type="button" class="btn btn-outline" id="meal-cancel-btn" style="display: none; margin-left: 8px;" onclick="resetMealForm()">Cancel</button>
+            </form>
+        </section>
+
+        <section class="admin-section">
+            <h2>All Meals</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Calories</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="meals-table-body">
+                    <tr><td colspan="5" class="loading">Loading...</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="admin-section">
+            <h2>All Orders</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="orders-table-body">
+                    <tr><td colspan="5" class="loading">Loading...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 FreshBite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

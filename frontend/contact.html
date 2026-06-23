@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - FreshBite</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Fresh<span>Bite</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="meals.html">Meals</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li id="auth-links"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+    </section>
+
+    <main class="container" style="padding: 40px 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto;">
+            <div class="card">
+                <h2 style="color: var(--primary-dark); margin-bottom: 16px;">Get in Touch</h2>
+                <p style="margin-bottom: 12px;"><strong>Email:</strong> support@freshbite.com</p>
+                <p style="margin-bottom: 12px;"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                <p style="margin-bottom: 12px;"><strong>Address:</strong> 123 Healthy Street, Nutrition City, NC 12345</p>
+                <p><strong>Hours:</strong> Mon - Sat, 8:00 AM - 8:00 PM</p>
+            </div>
+            <div class="card">
+                <h2 style="color: var(--primary-dark); margin-bottom: 16px;">Send a Message</h2>
+                <form id="contact-form" onsubmit="handleContact(event)">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 FreshBite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script>
+        function handleContact(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
