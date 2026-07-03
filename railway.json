@@ -4,7 +4,5 @@
     "builder": "DOCKERFILE",
     "dockerfilePath": "BACKEND/Dockerfile"
   },
-  "deploy": {
-    "startCommand": "java $JAVA_OPTS -jar /app/app.jar"
-  }
+  "deploy": {}
 }
